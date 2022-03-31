@@ -32,16 +32,19 @@ function createPainel(){
     const gamePainel = document.createElement('div')
     gamePainel.classList.add('gamePainel')
     
+    const inputScore = document.createElement('input')
+    inputScore.classList.add('inputScore')
+    
     const btnStart = document.createElement('button')
     btnStart.classList.add('btnStart')
-    btnStart.innerText = 'Iniciar'
+    btnStart.innerText = 'start'
 
     const btnRetry = document.createElement('button')
     btnRetry.classList.add('btnRetry')
-    btnRetry.innerText = 'Tentar Novamente'
+    btnRetry.innerText = 'Restart'
 
-    const inputScore = document.createElement('div')
-    inputScore.classList.add('inputScore')
+    //const inputScore = document.createElement('div')
+    //inputScore.classList.add('inputScore')
     
     const scoreText = document.createElement('h2')
     scoreText.innerText = `score:`;
@@ -52,9 +55,9 @@ function createPainel(){
     
     inputScore.appendChild(scoreText)
     gamePainel.appendChild(gameLogo)
+    gamePainel.appendChild(inputScore)
     gamePainel.appendChild(btnStart)
     gamePainel.appendChild(btnRetry)
-    gamePainel.appendChild(inputScore)
     centerPainel.appendChild(gamePainel)
     body.appendChild(centerPainel)
 
