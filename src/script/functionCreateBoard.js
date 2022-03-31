@@ -1,6 +1,6 @@
+const body = document.getElementById('root')
+
 function createBoard(){
-    const body = document.getElementById('root')
-    
     const gameContainer = document.createElement('div')
     gameContainer.classList.add('gameContainer')
     
@@ -26,8 +26,6 @@ createBoard()
 
 
 function createPainel(){
-    const body = document.getElementById('root')
-
     const centerPainel = document.createElement('div')
     centerPainel.classList.add('centerPainel')
     
@@ -42,13 +40,17 @@ function createPainel(){
     btnRetry.classList.add('btnRetry')
     btnRetry.innerText = 'Tentar Novamente'
 
-    const inputScore = document.createElement('input')
+    const inputScore = document.createElement('div')
     inputScore.classList.add('inputScore')
+    
+    const scoreText = document.createElement('h2')
+    scoreText.innerText = `score:`;
 
     const gameLogo = document.createElement('div')
     gameLogo.classList.add('gameLogo')
     gameLogo.innerText = "Genius"
     
+    inputScore.appendChild(scoreText)
     gamePainel.appendChild(gameLogo)
     gamePainel.appendChild(btnStart)
     gamePainel.appendChild(btnRetry)
@@ -58,9 +60,3 @@ function createPainel(){
 
 }
 createPainel()
-
-{/* <div class="centerPainel"> */}
-{/* <!-- <div class="gamePainel"> --> */}
-{/* <!-- <div class="gameLogo">Genius</div> --> */}
-{/* <!-- </div> --> */}
-{/* </div> */}

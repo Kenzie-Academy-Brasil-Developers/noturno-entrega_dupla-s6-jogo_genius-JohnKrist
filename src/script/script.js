@@ -1,21 +1,21 @@
 //BUTTONS
 
-const red = document.getElementById('red');
-const blue = document.getElementById('blue');
-const yellow = document.getElementById('yellow');
-const green = document.getElementById('green');
-const start = document.getElementById('start');
-const reset = document.getElementById('reset');
+const red = document.getElementsByClassName('gameButtonRed')[0];
+const blue = document.getElementsByClassName('gameButtonBlue')[0];
+const yellow = document.getElementsByClassName('gameButtonYellow')[0];
+const green = document.getElementsByClassName('gameButtonGreen')[0];
+const start = document.getElementsByClassName('btnStart')[0];
+const reset = document.getElementsByClassName('btnRetry')[0];
 
 /**
- VEMELHO -> 1
- AZUL -> 2
+ VERDE -> 1
+ VERMELHO -> 2
  AMARELO -> 3
- VERDE -> 4
+ AZUL -> 4
  */
 
 //AUDIOS
-const fail = new Audio ('naoconsegue.mp3')
+//const fail = new Audio ('naoconsegue.mp3')
 
 //CONTADORES
 let randomSequence = [];
@@ -110,7 +110,7 @@ function checkClick (event){
     for (i = 0; i <= score; i++){
         if (randomSequence[i] === playerSequence[i]) {
             score++
-            console.log(`score: ${score}`)
+            console.log()
     }
     playerSequence = [];
 
