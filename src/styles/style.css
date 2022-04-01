@@ -1,13 +1,13 @@
 :root{
-    --color-normal-green: rgb(56, 247, 56);
-    --color-normal-red: rgb(252, 42, 42);
-    --color-normal-yellow: rgb(224, 224, 46);
-    --color-normal-blue: rgb(54, 54, 248);
+    --color-normal-green: rgb(0, 105, 0);
+    --color-normal-red: rgb(126, 0, 0);
+    --color-normal-yellow: rgb(119, 119, 0);
+    --color-normal-blue: rgb(0, 0, 107);
     /*cores das luzes*/
-    --color-ligth-green: rgb(105, 255, 5);
-    --color-ligth-red: rgb(245, 81, 76);
-    --color-ligth-yellow: rgb(248, 252, 4);
-    --color-ligth-blue: rgb(4, 103, 252);
+    --color-ligth-green: rgb(101, 253, 0);
+    --color-ligth-red: rgb(255, 8, 0);
+    --color-ligth-yellow: rgb(229, 255, 0);
+    --color-ligth-blue: rgb(0, 183, 255);
 }
 
 
