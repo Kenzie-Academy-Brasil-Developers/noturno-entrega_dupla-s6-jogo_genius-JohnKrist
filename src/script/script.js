@@ -1,9 +1,10 @@
-//BUTTONS
+// BUTTONS
 
-const red = document.getElementsByClassName('gameButtonRed')[0];
-const blue = document.getElementsByClassName('gameButtonBlue')[0];
-const yellow = document.getElementsByClassName('gameButtonYellow')[0];
-const green = document.getElementsByClassName('gameButtonGreen')[0];
+const red = document.querySelector('.gameButtonRed')
+const blue = document.querySelector('.gameButtonBlue')
+const yellow = document.querySelector('.gameButtonYellow')
+const green = document.querySelector('.gameButtonGreen')
+
 const start = document.getElementsByClassName('btnStart')[0];
 const reset = document.getElementsByClassName('btnRetry')[0];
 
@@ -14,18 +15,18 @@ const reset = document.getElementsByClassName('btnRetry')[0];
  AZUL -> 4
  */
 
-//AUDIOS
-//const fail = new Audio ('naoconsegue.mp3')
+// AUDIOS
+// const fail = new Audio ('naoconsegue.mp3')
 
-//CONTADORES
+// CONTADORES
 let randomSequence = [];
 let playerSequence = [];
 let score = 0;
 let clickedColor = 0;
 
-//USANDO LET POIS FICA MAIS FACIL APAGAR O ARRAY NO RESET, SE USAR CONST VAI PRECISAR DE UMA FUNCAO PARA RESETAR.
+// USANDO LET POIS FICA MAIS FACIL APAGAR O ARRAY NO RESET, SE USAR CONST VAI PRECISAR DE UMA FUNCAO PARA RESETAR.
 
-//ENVENTOS
+// ENVENTOS
 start.addEventListener('click', getAleatorySequence)
 start.addEventListener('click', light)
 reset.addEventListener('click', resetSequence)
@@ -65,7 +66,7 @@ green.addEventListener('click', light)
  * QUANTOS NUMEROS COLOCAREMOS NA SEQUENCIA?
  */
 
-//CRIANDO A SEQUENCIA ALEATORIA
+// CRIANDO A SEQUENCIA ALEATORIA
 function getAleatorySequence () {
     randomSequence = [];
     for (i = 0; i < 10; i++){
@@ -75,7 +76,7 @@ function getAleatorySequence () {
     console.log(randomSequence)
 }
 
-//RESETANDO TUDO!
+// RESETANDO TUDO!
 function resetSequence (event) {
     randomSequence = [];
     playerSequence = [];
@@ -83,7 +84,7 @@ function resetSequence (event) {
     console.log(randomSequence)
 }
 
-//FUNCOES QUE CONVERTEM OS CLICKS EM NUMEROS!
+// FUNCOES QUE CONVERTEM OS CLICKS EM NUMEROS!
 function clickRed (event){
     clickedColor = 1;
     playerSequence.push(clickedColor)
@@ -105,7 +106,7 @@ function clickGreen (event){
     console.log(playerSequence)
 }
 
-//FUNCAO TESTA O CLICK E O COMPARA COM A SEQUENCIA CERTA!
+// FUNCAO TESTA O CLICK E O COMPARA COM A SEQUENCIA CERTA!
 function checkClick (event){
     for (i = 0; i <= score; i++){
         if (randomSequence[i] === playerSequence[i]) {
@@ -117,50 +118,50 @@ function checkClick (event){
     
      /*   
     } else {
-        //fail.play()
+        // fail.play()
         resetSequence()
         console.log(randomSequence)
-        //console.log(playerSequence)
+        // console.log(playerSequence)
         alert(`A CASA CAIU! VOCE PERDEU!!!!`)
         console.log(score)*/
     }
 }
 /*
-    //TA PASSANDO E SOMANDO OS PONTOS DO ARRAY TODO
+    // TA PASSANDO E SOMANDO OS PONTOS DO ARRAY TODO
     if (randomSequence[score] === clickedColor) {
         score++
         console.log(`score: ${score}`)
         return
     } else {
-        //fail.play()
+        // fail.play()
         resetSequence()
         console.log(randomSequence)
-        //console.log(playerSequence)
+        // console.log(playerSequence)
         alert(`A CASA CAIU! VOCE PERDEU!!!!`)
         console.log(score)
     }
 }
 */
-//FUNCAO PARA FAZER O JOGO 'FUNCIONAR'.... ACENDER AS LUZES E SO DEPOIS PERMITIR O CLICK....
+// FUNCAO PARA FAZER O JOGO 'FUNCIONAR'.... ACENDER AS LUZES E SO DEPOIS PERMITIR O CLICK....
 
 /**
  * VOU PRECISAR PERCORRER O ARRAY ALEATORIO E ALTERAR A COR DA DIV E RETORNAR A ORIGINAL.
  * setInterval?
  */
 
-//SETTIMEOU HELLLLP!!!
-//FUNÇAO PARA ACENDER AS LAPADAS! 
+// SETTIMEOU HELLLLP!!!
+// FUNÇAO PARA ACENDER AS LAPADAS! 
 function light(event){
     for(let i = 0; i <= score; i++){
         console.log(randomSequence[i])
         if(randomSequence[i] === 1) {
-            //alert('1')
+            // alert('1')
         } else if(randomSequence[i] === 2){
-            //alert('2')
+            // alert('2')
         } else if(randomSequence[i] === 3){
-            //alert('3')
+            // alert('3')
         }else if(randomSequence[i] === 4){
-            //alert('4')
+            // alert('4')
         }
         
     }

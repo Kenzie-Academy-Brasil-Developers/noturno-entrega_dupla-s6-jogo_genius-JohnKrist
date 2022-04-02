@@ -5,16 +5,16 @@ function createBoard(){
     gameContainer.classList.add('gameContainer')
     
     const div1 = document.createElement('div')
-    div1.classList.add("gameButtonGreen")
+    div1.classList.add('gameButtonAll',"gameButtonGreen")
 
     const div2 = document.createElement('div')
-    div2.classList.add("gameButtonRed")
+    div2.classList.add('gameButtonAll',"gameButtonRed")
 
     const div3 = document.createElement('div')
-    div3.classList.add("gameButtonYellow")
+    div3.classList.add('gameButtonAll',"gameButtonYellow")
 
     const div4 = document.createElement('div')
-    div4.classList.add("gameButtonBlue")
+    div4.classList.add('gameButtonAll',"gameButtonBlue")
 
    gameContainer.appendChild(div1) 
    gameContainer.appendChild(div2)
@@ -32,9 +32,10 @@ function createPainel(){
     const gamePainel = document.createElement('div')
     gamePainel.classList.add('gamePainel')
     
-    const inputScore = document.createElement('input')
+    const inputScore = document.createElement('div')
     inputScore.classList.add('inputScore')
     
+
     const btnStart = document.createElement('button')
     btnStart.classList.add('btnStart')
     btnStart.innerText = 'start'
@@ -47,7 +48,7 @@ function createPainel(){
     //inputScore.classList.add('inputScore')
     
     const scoreText = document.createElement('h2')
-    scoreText.innerText = `score:`;
+    scoreText.innerText = '';
 
     const gameLogo = document.createElement('div')
     gameLogo.classList.add('gameLogo')

@@ -52,7 +52,7 @@ body{
     margin-bottom: 11%;
     border-radius: 100%;
     position: absolute;
-    background-color: gray;
+    background-color: rgb(34, 31, 31);
     border: 10px solid #1C1C1C;
     -webkit-box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
     box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
@@ -114,7 +114,9 @@ body{
     background-color: rgb(92, 6, 6);
     color: rgb(252, 88, 88)
 }
-
+.onGame{
+    background-color: rgb(252, 83, 83);
+}
 
 /*CLASSES DOS BOTÕES*/
 
