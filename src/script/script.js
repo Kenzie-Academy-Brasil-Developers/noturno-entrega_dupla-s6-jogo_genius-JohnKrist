@@ -1,12 +1,14 @@
 // BUTTONS
 
-const red = document.querySelector('.gameButtonRed')
-const blue = document.querySelector('.gameButtonBlue')
-const yellow = document.querySelector('.gameButtonYellow')
-const green = document.querySelector('.gameButtonGreen')
-
+const btnRed = document.getElementsByClassName('gameButtonRed')[0];
+const btnBlue = document.getElementsByClassName('gameButtonBlue')[0];
+const btnYellow = document.getElementsByClassName('gameButtonYellow')[0];
+const btnGreen = document.getElementsByClassName('gameButtonGreen')[0];
 const start = document.getElementsByClassName('btnStart')[0];
 const reset = document.getElementsByClassName('btnRetry')[0];
+const scorePlace = document.getElementsByClassName('scorePlace')[0];
+const instruction = document.getElementsByClassName('instruction')[0]
+
 
 /**
  VERDE -> 1
@@ -15,170 +17,131 @@ const reset = document.getElementsByClassName('btnRetry')[0];
  AZUL -> 4
  */
 
-// AUDIOS
-// const fail = new Audio ('naoconsegue.mp3')
+//COLOR DATA:
+const colorData = [btnGreen, btnRed, btnYellow, btnBlue]
+const colorSquence = ['Green', 'Red', 'Yellow', 'Blue']
+/*
+ VERDE -> 0
+ VERMELHO -> 1
+ AMARELO -> 2
+ AZUL -> 3
+*/
 
-// CONTADORES
-let randomSequence = [];
+//CONTADORES
+let randomSequence = []; 
 let playerSequence = [];
 let score = 0;
 let clickedColor = 0;
+let countClick = 0;
 
-// USANDO LET POIS FICA MAIS FACIL APAGAR O ARRAY NO RESET, SE USAR CONST VAI PRECISAR DE UMA FUNCAO PARA RESETAR.
 
-// ENVENTOS
-start.addEventListener('click', getAleatorySequence)
-start.addEventListener('click', light)
-reset.addEventListener('click', resetSequence)
 
-red.addEventListener('click', clickRed)
-red.addEventListener('click', checkClick)
-red.addEventListener('click', light)
+//ENVENTOS
+reset.addEventListener('click', startGame)
 
-blue.addEventListener('click', clickBlue)
-blue.addEventListener('click', checkClick)
-blue.addEventListener('click', light)
+start.addEventListener('click', startGame)
 
-yellow.addEventListener('click', clickYellow)
-yellow.addEventListener('click', checkClick)
-yellow.addEventListener('click', light)
+btnRed.addEventListener('click', clickRed)
 
-green.addEventListener('click', clickGreen)
-green.addEventListener('click', checkClick)
-green.addEventListener('click', light)
+btnBlue.addEventListener('click', clickBlue)
+
+btnYellow.addEventListener('click', clickYellow)
+
+btnGreen.addEventListener('click', clickGreen)
+
 /****************************************************************************************************** */
+//CRIANDO A SEQUENCIA ALEATORIA
+function getAleatoryNumber () {
+    let newNumber = parseInt(Math.random() * 4);
+        return newNumber
+}
 
-/**
- * PRECISO DE UMA FUNCAO QUE INICIE O JOGO! -> EVENTO ESCUTADOR NO NO BOTAO START - OK
- * PRECISO DE UMA FUNCAO QUE ACENDA (TROQUE A COR) ALEATORIAMENTE UM DOS BOTOES
- *      PRECISO NUMERAR OS BOTOES PARA GERAR OS COMANDOS...
- * PRECISO DE UMA FUNCAO QUE VERIFIQUE SE O JOGODOR RESPONDER CORRETAMENTE - OK
- * PRECISO DE UMA FUNCAO QUE SOME OS PONTOS DO JOGADOR - OK
- * A FUNCA DE ACENDER UMA COR, SERA REPETIDA ATE O JOGADOR ERRAR, SENDO UM LOOPING, REPETINDO TODOS OS EVENTOS ANTERIORES.
- * O BOTAO RESET APAGA A LUZ, APAGA TUDO! - OK
- * 
- */
-
-/*PROBLEMA NUMERO 1: COMO 'ACENDER' A LUZ? */
-
-/**
- * CRIAR A FUNCAO QUE GERA UMA SEQUENCIA ALEATORIA - OK
- * QUANTOS NUMEROS COLOCAREMOS NA SEQUENCIA?
- */
-
-// CRIANDO A SEQUENCIA ALEATORIA
-function getAleatorySequence () {
-    randomSequence = [];
-    for (i = 0; i < 10; i++){
-    let newNumber = parseInt(Math.random() * 4 + 1);
-        randomSequence.push(newNumber)
-    }
+//FUNCOES QUE CONVERTEM OS CLICKS EM NUMEROS!
+function clickGreen (event){
+    clickedColor = 0;
+    playerSequence.push(clickedColor)
+    colorLight(clickedColor)
+    checkClick()
     console.log(randomSequence)
 }
 
-// RESETANDO TUDO!
-function resetSequence (event) {
-    randomSequence = [];
-    playerSequence = [];
-    score = 0
-    console.log(randomSequence)
-}
-
-// FUNCOES QUE CONVERTEM OS CLICKS EM NUMEROS!
 function clickRed (event){
     clickedColor = 1;
     playerSequence.push(clickedColor)
-    console.log(playerSequence)
-}
-function clickBlue (event){
-    clickedColor = 2;
-    playerSequence.push(clickedColor)
-    console.log(playerSequence)
+    colorLight(clickedColor)
+    checkClick()
+    console.log(randomSequence)
 }
 function clickYellow (event){
+    clickedColor = 2;
+    playerSequence.push(clickedColor)
+    colorLight(clickedColor)
+    checkClick()
+    console.log(randomSequence)
+}
+function clickBlue (event){
     clickedColor = 3;
     playerSequence.push(clickedColor)
-    console.log(playerSequence)
-}
-function clickGreen (event){
-    clickedColor = 4;
-    playerSequence.push(clickedColor)
-    console.log(playerSequence)
+    colorLight(clickedColor)
+    checkClick()
+    console.log(randomSequence)
 }
 
-// FUNCAO TESTA O CLICK E O COMPARA COM A SEQUENCIA CERTA!
-function checkClick (event){
-    for (i = 0; i <= score; i++){
-        if (randomSequence[i] === playerSequence[i]) {
-            score++
-            console.log()
-    }
+function nextLevel(event){ //nao dispara se receber um array...
+    scorePlace.innerText = `score:${score}`;
     playerSequence = [];
-
-    
-     /*   
-    } else {
-        // fail.play()
-        resetSequence()
-        console.log(randomSequence)
-        // console.log(playerSequence)
-        alert(`A CASA CAIU! VOCE PERDEU!!!!`)
-        console.log(score)*/
-    }
+    let newNumber = getAleatoryNumber()
+    randomSequence.push(newNumber)
+    setTimeout(function () {
+        instruction.innerText = 'Vamos começar! Atenção!'
+    }, 400);
+    setTimeout(function () {
+        sequenceLight(newNumber)
+    }, 800)
 }
-/*
-    // TA PASSANDO E SOMANDO OS PONTOS DO ARRAY TODO
-    if (randomSequence[score] === clickedColor) {
+//FUNCAO QUE INICIA O PROXIMO NIVEL:
+
+//PISCA O BOTAO
+function colorLight(number) {
+    const light = colorData[number]
+    const lightColor = colorSquence[number]    
+    light.classList.add(`gameButtonLigth${lightColor}`);
+    setTimeout(function () {
+        light.classList.remove(`gameButtonLigth${lightColor}`);
+    }, 800);
+}
+
+//PISCA A SEQUENCIA!
+function sequenceLight(event) {
+    let count = 0;
+    const sequence = setInterval(function () {
+        colorLight(randomSequence[count]);
+      count++;
+      if (count === randomSequence.length) {
+        clearInterval(sequence);
+        setTimeout(function (){
+            instruction.innerText = 'Sua vez! Repita a sequência!'
+        }, 1000)
+      }
+    }, 1000);
+}
+
+//FUNCAO TESTA O CLICK E O COMPARA COM A SEQUENCIA CERTA
+function checkClick (){
+    if (randomSequence[countClick] !== playerSequence[countClick]){
+        countClick = 0
+        alert(`Você Perdeu! Sua pontuação foi: ${score}`)
+        score = 0
+        startGame()
+    } else if (randomSequence[countClick] === playerSequence[countClick]){
+        countClick++
+    }
+    if(randomSequence.length === playerSequence.length){
         score++
-        console.log(`score: ${score}`)
-        return
-    } else {
-        // fail.play()
-        resetSequence()
-        console.log(randomSequence)
-        // console.log(playerSequence)
-        alert(`A CASA CAIU! VOCE PERDEU!!!!`)
-        console.log(score)
+        countClick = 0
+        instruction.innerText = 'Muito bem! Proximo nivel...'
+        setTimeout(function () {
+            nextLevel()
+        }, 1000)
     }
 }
-*/
-// FUNCAO PARA FAZER O JOGO 'FUNCIONAR'.... ACENDER AS LUZES E SO DEPOIS PERMITIR O CLICK....
-
-/**
- * VOU PRECISAR PERCORRER O ARRAY ALEATORIO E ALTERAR A COR DA DIV E RETORNAR A ORIGINAL.
- * setInterval?
- */
-
-// SETTIMEOU HELLLLP!!!
-// FUNÇAO PARA ACENDER AS LAPADAS! 
-function light(event){
-    for(let i = 0; i <= score; i++){
-        console.log(randomSequence[i])
-        if(randomSequence[i] === 1) {
-            // alert('1')
-        } else if(randomSequence[i] === 2){
-            // alert('2')
-        } else if(randomSequence[i] === 3){
-            // alert('3')
-        }else if(randomSequence[i] === 4){
-            // alert('4')
-        }
-        
-    }
-}
-
-/*
-function light (event){
-    for (i = 0; i <= score; i++){
-        classList.add('selected')
-    }
-}
-*/
-/*
-            setTimeout(() => {
-                green.classList.add('active');
-            },250);
-            setTimeout(() => {
-                green.classList.remove('active');
-            },1400);
-*/
