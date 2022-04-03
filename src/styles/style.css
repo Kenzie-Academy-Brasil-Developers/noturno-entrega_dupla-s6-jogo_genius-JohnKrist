@@ -87,10 +87,19 @@ body{
 
 }
 
+.gameInstruction{
+    height: 20px;
+    width: 250px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
+.gameInstruction h3 {
+    text-align: center;
+}
 .inputScore{
     display: flex;
     align-items: center;
-    margin-top: 60px;
     margin-left: 35px;
     width: 200px;
     height: 40px;

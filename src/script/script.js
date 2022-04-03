@@ -7,6 +7,7 @@ const btnGreen = document.getElementsByClassName('gameButtonGreen')[0];
 const start = document.getElementsByClassName('btnStart')[0];
 const reset = document.getElementsByClassName('btnRetry')[0];
 const scorePlace = document.getElementsByClassName('scorePlace')[0];
+const instruction = document.getElementsByClassName('instruction')[0]
 
 //COLOR DATA:
 const colorData = [btnGreen, btnRed, btnYellow, btnBlue]
@@ -90,8 +91,12 @@ function nextLevel(event){ //nao dispara se receber um array...
     playerSequence = [];
     let newNumber = getAleatoryNumber()
     randomSequence.push(newNumber)
-    console.log(randomSequence)
-    sequenceLight(newNumber)
+    setTimeout(function () {
+        instruction.innerText = 'Vamos começar! Atenção!'
+    }, 400);
+    setTimeout(function () {
+        sequenceLight(newNumber)
+    }, 800)
 }
 //FUNCAO QUE INICIA O PROXIMO NIVEL:
 
@@ -113,8 +118,12 @@ function sequenceLight(event) {
       count++;
       if (count === randomSequence.length) {
         clearInterval(sequence);
+        setTimeout(function (){
+            instruction.innerText = 'Sua vez! Repita a sequência!'
+        }, 1000)
       }
     }, 1000);
+    
 }
 
 //FUNCAO TESTA O CLICK E O COMPARA COM A SEQUENCIA CERTA
@@ -122,13 +131,15 @@ function checkClick (){
     if (randomSequence[countClick] !== playerSequence[countClick]){
         countClick = 0
         alert(`Você Perdeu! Sua pontuação foi: ${score}`)
-        resetGame()
+        score = 0
+        startGame()
     } else if (randomSequence[countClick] === playerSequence[countClick]){
         countClick++
     }
     if(randomSequence.length === playerSequence.length){
         score++
         countClick = 0
+        instruction.innerText = 'Muito bem! Proximo nivel...'
         setTimeout(function () {
             nextLevel()
         }, 1000)
