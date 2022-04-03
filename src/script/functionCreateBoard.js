@@ -44,7 +44,7 @@ function createPainel(){
     inputScore.classList.add('inputScore')
     
     const scoreText = document.createElement('h2')
-    scoreText.innerText = `score:`;
+    scoreText.classList.add('scorePlace')
 
     const gameLogo = document.createElement('div')
     gameLogo.classList.add('gameLogo')
