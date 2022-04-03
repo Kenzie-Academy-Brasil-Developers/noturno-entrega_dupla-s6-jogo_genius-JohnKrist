@@ -1,8 +1,8 @@
 :root{
-    --color-normal-green: rgb(0, 105, 0);
-    --color-normal-red: rgb(126, 0, 0);
-    --color-normal-yellow: rgb(119, 119, 0);
-    --color-normal-blue: rgb(0, 0, 107);
+   --color-normal-green: rgb(10, 143, 10);
+    --color-normal-red: rgb(163, 11, 11);
+    --color-normal-yellow: rgb(172, 172, 13);
+    --color-normal-blue: rgb(12, 12, 165);
     /*cores das luzes*/
     --color-ligth-green: rgb(101, 253, 0);
     --color-ligth-red: rgb(255, 8, 0);
@@ -13,7 +13,7 @@
 
 body{
     background-image: url(../img/backgroudGame1.jpg);
-    -webkit-background-size: cover;
+    background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -40,20 +40,29 @@ body{
     align-items: center;
     justify-content: center;
     margin-top: 45px
+
 }
 
 .gamePainel{
     width: 280px;
     height: 280px;
     border-radius: 100%;
-    background-color: white;
-    border: 15px solid black;
+
+    border: 10px solid black;
+    margin-bottom: 11%;
+    border-radius: 100%;
+    position: absolute;
+    background-color: rgb(34, 31, 31);
+    border: 10px solid #1C1C1C;
+    -webkit-box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+    box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
 }
 
 .gameLogo{
     text-align: center;
     font-family:fantasy;
-    margin-bottom: 8%;
+    margin-bottom: 10%;
+    color: beige;
     
 }
 
@@ -61,29 +70,33 @@ body{
 
 .btnStart{
     width: 70px;
-    height: 50px;
-    background-color: rgb(86, 86, 248);
-    color: #000;
+    height: 30px;
+    margin-left: 24px;
+    background-color: blue;
+    color: whitesmoke;
     border-radius: 15px;
     border-color: none;
-    font-weight: bold;
+    font-weight: 300;
     font-family: fantasy;
     cursor: pointer;
-    margin: 5% 0 0 15%
+    
 
 }
 
 .btnRetry{
     width: 100px;
-    height: 50px;
+    height: 30px;
     margin: 20px;
-    background-color: rgb(250, 91, 91);
-    color: #000;
-    border-radius: 15px;
     border-color: none;
-    font-weight: bold;
+    margin-left: 60px;
+    background-color: red;
+    color: whitesmoke;
+    border-radius: 15px;
+    font-weight: 300;
     font-family: fantasy;
-    cursor: pointer
+    cursor: pointer;
+ 
+ 
 
 }
 
@@ -100,15 +113,19 @@ body{
 .inputScore{
     display: flex;
     align-items: center;
-    margin-left: 35px;
+    margin: 38px;
     width: 200px;
     height: 40px;
-    font-size: 18px;
+    font-size: 20px;
     border-radius: 15px;
     border: 1px solid black;
     padding-left: 5px;
+    background-color: rgb(92, 6, 6);
+    color: rgb(252, 88, 88)
 }
-
+.onGame{
+    background-color: rgb(252, 83, 83);
+}
 
 /*CLASSES DOS BOTÕES*/
 
@@ -121,20 +138,21 @@ body{
     width: 300px;
     height: 300px;
     border-top-left-radius: 300px;
-    border: 7.5px solid black;
-    border-left: 15px solid #000;
-    border-top: 15px solid #000;
-    
-   
+    border: 5px solid #1C1C1C;
+    -webkit-box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+    box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+
 }
 .gameButtonRed{
     background-color: var(--color-normal-red);
     width: 300px;
     height: 300px;
     border-top-right-radius: 300px;
-    border: 7.5px solid black;
-    border-top: 15px solid #000;
-    border-right: 15px solid #000;
+
+    border: 5px solid #1C1C1C;
+    -webkit-box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+    box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+
     
 }
 .gameButtonYellow{
@@ -142,9 +160,10 @@ body{
     width: 300px;
     height: 300px;
     border-bottom-left-radius: 300px;
-    border: 7.5px solid black;
-    border-left: 15px solid #000;
-    border-bottom: 15px solid #000;
+    border: 5px solid #1C1C1C;
+    -webkit-box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+    box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+
     
 }
 .gameButtonBlue{
@@ -152,9 +171,10 @@ body{
     width: 300px;
     height: 300px;
     border-bottom-right-radius: 300px;
-    border: 7.5px solid black;
-    border-right: 15px solid #000;
-    border-bottom: 15px solid #000;
+
+    border: 5px solid #1C1C1C;
+    -webkit-box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+    box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
 }
 
 /*CLASSES BOTÕES LIGADOS*/
