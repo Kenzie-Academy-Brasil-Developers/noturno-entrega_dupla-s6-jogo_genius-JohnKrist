@@ -1,4 +1,4 @@
-
+/*
 red.addEventListener('click', clickRed)
 blue.addEventListener('click', clickBlue)
 yellow.addEventListener('click', clickYellow)
@@ -65,4 +65,4 @@ function youLose() {
         blue.classList.remove('gameButtonLigthBlue')
     }, 560)
 
-}
+}*/

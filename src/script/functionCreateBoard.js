@@ -34,7 +34,14 @@ function createPainel(){
     
     const inputScore = document.createElement('div')
     inputScore.classList.add('inputScore')
-    
+
+    const scoreText = document.createElement('h2')
+    scoreText.classList.add('scorePlace')
+
+    const gameInstruction = document.createElement('div')
+    gameInstruction.classList.add('gameInstruction')
+    const textInstruction = document.createElement('h3')
+    textInstruction.classList.add('instruction')
 
     const btnStart = document.createElement('button')
     btnStart.classList.add('btnStart')
@@ -44,18 +51,6 @@ function createPainel(){
     btnRetry.classList.add('btnRetry')
     btnRetry.innerText = 'Restart'
 
-    const gameInstruction = document.createElement('div')
-    gameInstruction.classList.add('gameInstruction')
-    const textInstruction = document.createElement('h3')
-    textInstruction.classList.add('instruction')
-
-    const inputScore = document.createElement('div')
-    inputScore.classList.add('inputScore')
-    
-    const scoreText = document.createElement('h2')
-    scoreText.classList.add('scorePlace')
-
-
     const gameLogo = document.createElement('div')
     gameLogo.classList.add('gameLogo')
     gameLogo.innerText = "Genius"
@@ -64,6 +59,7 @@ function createPainel(){
     inputScore.appendChild(scoreText)
     gamePainel.appendChild(gameLogo)
     gamePainel.appendChild(inputScore)
+    gamePainel.appendChild(gameInstruction)
     gamePainel.appendChild(btnStart)
     gamePainel.appendChild(btnRetry)
     centerPainel.appendChild(gamePainel)

@@ -1,4 +1,4 @@
-// BUTTONS
+//BUTTONS
 
 const btnRed = document.getElementsByClassName('gameButtonRed')[0];
 const btnBlue = document.getElementsByClassName('gameButtonBlue')[0];
@@ -8,14 +8,6 @@ const start = document.getElementsByClassName('btnStart')[0];
 const reset = document.getElementsByClassName('btnRetry')[0];
 const scorePlace = document.getElementsByClassName('scorePlace')[0];
 const instruction = document.getElementsByClassName('instruction')[0]
-
-
-/**
- VERDE -> 1
- VERMELHO -> 2
- AMARELO -> 3
- AZUL -> 4
- */
 
 //COLOR DATA:
 const colorData = [btnGreen, btnRed, btnYellow, btnBlue]
@@ -35,7 +27,6 @@ let clickedColor = 0;
 let countClick = 0;
 
 
-
 //ENVENTOS
 reset.addEventListener('click', startGame)
 
@@ -50,6 +41,7 @@ btnYellow.addEventListener('click', clickYellow)
 btnGreen.addEventListener('click', clickGreen)
 
 /****************************************************************************************************** */
+
 //CRIANDO A SEQUENCIA ALEATORIA
 function getAleatoryNumber () {
     let newNumber = parseInt(Math.random() * 4);
@@ -64,7 +56,6 @@ function clickGreen (event){
     checkClick()
     console.log(randomSequence)
 }
-
 function clickRed (event){
     clickedColor = 1;
     playerSequence.push(clickedColor)
@@ -85,6 +76,14 @@ function clickBlue (event){
     colorLight(clickedColor)
     checkClick()
     console.log(randomSequence)
+}
+
+//FUNCAO QUE COMECA O JOGO
+function startGame(event){ //nao dispara se receber um array...
+    randomSequence = [];
+    playerSequence = [];
+    score = 0
+    nextLevel()
 }
 
 function nextLevel(event){ //nao dispara se receber um array...
@@ -124,6 +123,7 @@ function sequenceLight(event) {
         }, 1000)
       }
     }, 1000);
+    
 }
 
 //FUNCAO TESTA O CLICK E O COMPARA COM A SEQUENCIA CERTA
