@@ -1,0 +1,198 @@
+:root{
+   --color-normal-green: rgb(10, 143, 10);
+    --color-normal-red: rgb(163, 11, 11);
+    --color-normal-yellow: rgb(172, 172, 13);
+    --color-normal-blue: rgb(12, 12, 165);
+    /*cores das luzes*/
+    --color-ligth-green: rgb(101, 253, 0);
+    --color-ligth-red: rgb(255, 8, 0);
+    --color-ligth-yellow: rgb(255, 251, 0);
+    --color-ligth-blue: rgb(0, 255, 221);
+}
+
+
+body{
+    background-image: url(../img/backgroudGame1.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.gameContainer{
+    margin-top: 5%;
+    width: 75%;
+    min-width: 623px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    
+}
+
+/*PAINEL CENTRAL*/
+.centerPainel{
+    display: flex;
+    flex-direction: column-reverse;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    margin-top: 45px;
+    
+}
+
+.gamePainel{
+    width: 280px;
+    height: 280px;
+    border-radius: 100%;
+    
+    border: 10px solid black;
+    margin-bottom: 11%;
+    border-radius: 100%;
+    position: absolute;
+    background-color: rgb(34, 31, 31);
+    border: 10px solid #1C1C1C;
+    -webkit-box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+    box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+.gameLogo{
+    text-align: center;
+    font-family:fantasy;
+    margin-bottom: 10%;
+    color: beige;
+    
+}
+
+/*BOTÕES DO PAINEL*/
+
+.btnStart{
+    width: 70px;
+    height: 30px;
+    margin-left: 24px;
+    background-color: blue;
+    color: whitesmoke;
+    border-radius: 15px;
+    border-color: none;
+    font-weight: 300;
+    font-family: fantasy;
+    cursor: pointer;
+    
+
+}
+
+.btnRetry{
+    width: 100px;
+    height: 30px;
+    margin: 20px;
+    border-color: none;
+    margin-left: 60px;
+    background-color: red;
+    color: whitesmoke;
+    border-radius: 15px;
+    font-weight: 300;
+    font-family: fantasy;
+    cursor: pointer;
+ 
+ 
+
+}
+
+.gameInstruction{
+    height: 20px;
+    width: 250px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
+.gameInstruction h3 {
+    text-align: center;
+    color: whitesmoke;
+}
+.inputScore{
+    display: flex;
+    align-items: center;
+    margin: 38px;
+    width: 200px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 15px;
+    border: 1px solid black;
+    padding-left: 5px;
+    background-color: rgb(92, 6, 6);
+    color: rgb(252, 88, 88)
+}
+.onGame{
+    background-color: rgb(252, 83, 83);
+}
+
+/*CLASSES DOS BOTÕES*/
+
+
+/*.gameAllButtons{
+}*/
+
+.gameButtonGreen{
+    background-color: var(--color-normal-green);
+    width: 300px;
+    height: 300px;
+    border-top-left-radius: 300px;
+    border: 5px solid #1C1C1C;
+    -webkit-box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+    box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+
+}
+.gameButtonRed{
+    background-color: var(--color-normal-red);
+    width: 300px;
+    height: 300px;
+    border-top-right-radius: 300px;
+
+    border: 5px solid #1C1C1C;
+    -webkit-box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+    box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+
+    
+}
+.gameButtonYellow{
+    background-color: var(--color-normal-yellow);
+    width: 300px;
+    height: 300px;
+    border-bottom-left-radius: 300px;
+    border: 5px solid #1C1C1C;
+    -webkit-box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+    box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+
+    
+}
+.gameButtonBlue{
+    background-color: var(--color-normal-blue);
+    width: 300px;
+    height: 300px;
+    border-bottom-right-radius: 300px;
+
+    border: 5px solid #1C1C1C;
+    -webkit-box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+    box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+/*CLASSES BOTÕES LIGADOS*/
+
+.gameButtonLigthGreen{
+    background-color: var(--color-ligth-green);
+
+}
+.gameButtonLigthRed{
+    background-color: var(--color-ligth-red);
+
+}
+.gameButtonLigthYellow{
+    background-color: var(--color-ligth-yellow);
+
+}
+.gameButtonLigthBlue{
+    background-color: var(--color-ligth-blue);
+
+}
