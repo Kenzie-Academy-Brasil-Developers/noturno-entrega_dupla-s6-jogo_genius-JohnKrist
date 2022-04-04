@@ -28,7 +28,7 @@ let countClick = 0;
 
 
 //ENVENTOS
-reset.addEventListener('click', startGame)
+reset.addEventListener('click', resetGame)
 
 start.addEventListener('click', startGame)
 
@@ -79,6 +79,14 @@ function clickBlue (event){
 }
 
 //FUNCAO QUE COMECA O JOGO
+function resetGame(event){
+    alert(`O jogo ira recomeçar do nivel 1!`)
+    randomSequence = [];
+    playerSequence = [];
+    score = 0
+    nextLevel()
+}
+
 function startGame(event){ //nao dispara se receber um array...
     randomSequence = [];
     playerSequence = [];
@@ -130,9 +138,13 @@ function sequenceLight(event) {
 function checkClick (){
     if (randomSequence[countClick] !== playerSequence[countClick]){
         countClick = 0
-        alert(`Você Perdeu! Sua pontuação foi: ${score}`)
+        alert(`Você Perdeu! Sua pontuação foi: ${score} \n Aperte em jogar novamente para recomeçar`)
         score = 0
-        startGame()
+        scorePlace.innerText = `score:${score}`;
+        randomSequence = [];
+        playerSequence = [];
+        instruction.innerText = 'Aperte para jogar novamente.'
+        return
     } else if (randomSequence[countClick] === playerSequence[countClick]){
         countClick++
     }
